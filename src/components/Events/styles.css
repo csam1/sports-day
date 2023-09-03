@@ -1,0 +1,48 @@
+.show-all-events-container {
+  width: 50%;
+}
+
+.error-msg {
+  color: red;
+  font-size: 14px;
+}
+
+.align-text-center{
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+}
+
+.left-container {
+  width: 10%;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.right-container {
+  line-height: 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .card-container {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card-container {
+    flex-direction: row;
+  }
+}
