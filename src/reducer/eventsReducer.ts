@@ -1,22 +1,22 @@
 import { createContext } from 'react';
 
-import { eventActionTypes } from '../types/Action';
+import { EventActionTypes } from '../types/Action';
 import { EventProperties } from '../types/event';
 
-type stateProps = {
+type StateProps = {
   eventList: EventProperties[];
   selectedEventCount: number;
 };
 
-type actionTypes = {
-  type: eventActionTypes,
+type ActionTypes = {
+  type: EventActionTypes,
   eventList?: EventProperties[],
   event?: EventProperties;
 }
 
 export type GlobalContent = {
-  state: stateProps,
-  dispatchEvent:(c: actionTypes) => void
+  state: StateProps,
+  dispatchEvent:(c: ActionTypes) => void
 }
 
 export const GlobalContext = createContext<GlobalContent>({
@@ -27,15 +27,15 @@ export const GlobalContext = createContext<GlobalContent>({
   dispatchEvent: (c) => {}
 });
 
-export const eventReducer = (state: stateProps, action: actionTypes): stateProps => {
+export const eventReducer = (state: StateProps, action: ActionTypes): StateProps => {
   switch (action.type) {
-    case eventActionTypes.UPDATE_EVENT_LIST: {
+    case EventActionTypes.UPDATE_EVENT_LIST: {
       return {
         eventList: action?.eventList || [],
         selectedEventCount: 0
       };
     }
-    case eventActionTypes.DESELECT_EVENT: {
+    case EventActionTypes.DESELECT_EVENT: {
       const index = state.eventList.findIndex(
         (selectedEvent) => selectedEvent.id === action?.event?.id || 0
       );
@@ -45,7 +45,7 @@ export const eventReducer = (state: stateProps, action: actionTypes): stateProps
         eventList: state.eventList
       };
     }
-    case eventActionTypes.SELECT_EVENT: {
+    case EventActionTypes.SELECT_EVENT: {
       if (state.selectedEventCount < 3) {
         const index = state.eventList.findIndex(
           (selectedEvent) => selectedEvent.id === action?.event?.id || 0

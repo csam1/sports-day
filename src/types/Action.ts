@@ -1,4 +1,4 @@
-export enum eventActionTypes {
+export enum EventActionTypes {
   DESELECT_EVENT = "DESELECT_EVENT",
   SELECT_EVENT = "SELECT_EVENT",
   UPDATE_EVENT_LIST = "UPDATE_EVENT_LIST"

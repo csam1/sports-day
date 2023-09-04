@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 
 import { getEventsList } from "../../api/events";
 import { GlobalContent, GlobalContext } from "../../reducer/eventsReducer";
-import { eventActionTypes } from "../../types/Action";
+import { EventActionTypes } from "../../types/Action";
 import AllEvents from "./AllEvents";
 import SelectedEvents from "./SelectedEvents";
 
@@ -23,7 +23,7 @@ const Events = () => {
       const data = await getEventsList();
       setApiState((state) => ({ ...state, loading: "" }));
       dispatchEvent({
-        type: eventActionTypes.UPDATE_EVENT_LIST,
+        type: EventActionTypes.UPDATE_EVENT_LIST,
         eventList: data,
       });
     } catch (e) {

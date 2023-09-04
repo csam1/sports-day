@@ -1,7 +1,7 @@
 import React, { useCallback, useContext } from 'react';
 
 import { GlobalContent, GlobalContext } from '../../reducer/eventsReducer';
-import { eventActionTypes } from '../../types/Action';
+import { EventActionTypes } from '../../types/Action';
 import { EventProperties } from '../../types/event';
 import Card from '../Card';
 
@@ -10,7 +10,7 @@ const SelectedEvents = () => {
 
   const handleEventSelection = useCallback((event: EventProperties) => {
     dispatchEvent({
-      type: eventActionTypes.DESELECT_EVENT,
+      type: EventActionTypes.DESELECT_EVENT,
       event,
     });
   }, []);
@@ -30,7 +30,7 @@ const SelectedEvents = () => {
               />
             );
           }
-          return null;
+          return <></>;
         })}
 
       </div>

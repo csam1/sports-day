@@ -4,7 +4,7 @@ import React, { useCallback, useContext } from 'react';
 
 import { isTimingOverlapping } from '../../helpers';
 import { GlobalContent, GlobalContext } from '../../reducer/eventsReducer';
-import { eventActionTypes } from '../../types/Action';
+import { EventActionTypes } from '../../types/Action';
 import { EventProperties } from '../../types/event';
 import Card from '../Card';
 
@@ -13,7 +13,7 @@ const AllEvents = () => {
 
   const handleEventSelection = useCallback((event: EventProperties) => {
     dispatchEvent({
-      type: eventActionTypes.SELECT_EVENT,
+      type: EventActionTypes.SELECT_EVENT,
       event,
     });
   }, []);
@@ -53,7 +53,7 @@ const AllEvents = () => {
               />
             );
           }
-          return null;
+          return <></>;
         })}
       </div>
     </div>
