@@ -5,6 +5,7 @@ import { GlobalContent, GlobalContext } from "../../reducer/eventsReducer";
 import { EventActionTypes } from "../../types/Action";
 import AllEvents from "./AllEvents";
 import SelectedEvents from "./SelectedEvents";
+import { SELECTED_EVENTS_LIMIT } from "../../constants";
 
 const Events = () => {
   const { state, dispatchEvent } = useContext<GlobalContent>(GlobalContext);
@@ -59,8 +60,8 @@ const Events = () => {
       <h1>Sports Day</h1>
       <h2>List of all Sports events</h2>
       <p className="error-msg">
-        {state.selectedEventCount === 3
-          ? "will not able to add more than 3 events, Please Deselect any to continue events selection"
+        {state.selectedEventList.length === SELECTED_EVENTS_LIMIT
+          ? `will not able to add more than ${SELECTED_EVENTS_LIMIT} events, Please Deselect any to continue events selection`
           : ""}
       </p>
       <div className="events-container">{renderEventsContent()}</div>

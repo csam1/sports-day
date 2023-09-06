@@ -1,24 +1,25 @@
-import './styles.css';
+import "./styles.css";
 
-import React from 'react';
+import React from "react";
 
-import { formatTimeAmPm } from '../../helpers';
-import { EventProperties } from '../../types/event';
+import { formatTimeAmPm } from "../../helpers";
+import { EventProperties } from "../../types/event";
 
 interface CardProps {
   event: EventProperties;
   isEventSelected: boolean;
   handleEventSelection: (event: EventProperties) => void;
   isDisabled?: boolean;
+  eventRegistrationStatus: string;
 }
 
 const Card = ({
   event,
   isEventSelected,
   handleEventSelection,
-  isDisabled = false
+  isDisabled = false,
+  eventRegistrationStatus = "",
 }: CardProps) => {
-  
   return (
     <div className={`card ${isDisabled ? "event-disabled-background" : ""}`}>
       <div className="left-container">
@@ -26,7 +27,8 @@ const Card = ({
       </div>
       <div className="separator"></div>
       <div className="right-container">
-        <div>{event.event_name}</div>
+        <div className="error-msg">{eventRegistrationStatus}</div>
+        <div className="event-name">{event.event_name}</div>
         <div>({event.event_category})</div>
         <div>{new Date(event.start_time).toDateString()}</div>
         <div>

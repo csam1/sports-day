@@ -45,3 +45,13 @@ export const isTimingOverlapping = (
   }
   return false;
 };
+
+export const isEventRegistrationClosed = (startTime: string) => {
+  const time = new Date(startTime).getTime();
+  const currentTime = new Date().getTime();
+  const diff = (time-currentTime)/(1000*60);
+  if(diff < 0 || diff < 5){
+    return true;
+  }
+  return false;
+}
