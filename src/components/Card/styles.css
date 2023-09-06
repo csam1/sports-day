@@ -1,0 +1,55 @@
+.card {
+  height: 200px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.event-disabled-background {
+  background-color: #b3b3b3;
+}
+
+.selection-button {
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 10px 16px;
+  border: none;
+  color: white;
+  background-color: rgb(19, 162, 119);
+}
+
+.btn-disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+.separator {
+  border: 1px solid black;
+  margin: 10px;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .card {
+    width: 50%;
+    flex-direction: row;
+  }
+  .separator {
+    height: 100%;
+    width: unset;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card {
+    width: 40%;
+    flex-direction: row;
+  }
+  .separator {
+    height: 100%;
+    width: unset;
+  }
+}
