@@ -9,7 +9,7 @@ import SelectedEvents from "./SelectedEvents";
 const Events = () => {
   const { state, dispatchEvent } = useContext<GlobalContent>(GlobalContext);
   const [apiState, setApiState] = useState({
-    loading: "Loading",
+    loading: "",
     errorMsg: "",
   });
 
