@@ -1,12 +1,12 @@
 .card {
   height: 200px;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   padding: 10px;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 .event-disabled-background {
   background-color: #b3b3b3;
@@ -20,6 +20,7 @@
   border: none;
   color: white;
   background-color: rgb(19, 162, 119);
+  margin-bottom: 20px;
 }
 
 .btn-disabled {
@@ -30,6 +31,11 @@
   border: 1px solid black;
   margin: 10px;
   width: 100%;
+}
+.event-name {
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {

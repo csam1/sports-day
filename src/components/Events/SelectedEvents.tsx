@@ -25,9 +25,16 @@ const SelectedEvents = () => {
             <Card
               key={event.id}
               event={event}
-              isEventSelected={true}
-              handleEventSelection={handleEventSelection}
-              eventRegistrationStatus={isEventRegistrationClosed(event.start_time)? "Event registration closed":'Open'}
+              footer={{
+                handleBtnSelection: handleEventSelection,
+                isDisabled:  false,
+                btnText: "Deselect"
+              }}
+              header={
+                isEventRegistrationClosed(event.start_time)
+                  ? <div className="error-msg">Event registration closed</div>
+                  : <div className="status-open-msg">Open</div>
+              }
             />
           );
         })}

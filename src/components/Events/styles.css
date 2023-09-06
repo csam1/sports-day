@@ -1,10 +1,5 @@
 .show-all-events-container {
-  width: 50%;
-}
-
-.error-msg {
-  color: red;
-  font-size: 14px;
+  width: 93%;
 }
 
 .align-text-center{
@@ -20,6 +15,7 @@
 }
 
 .right-container {
+  width: 80%;
   line-height: 21px;
   display: flex;
   flex-direction: column;
@@ -33,6 +29,21 @@
   flex-wrap: wrap;
   column-gap: 10px;
   row-gap: 10px;
+}
+
+.error-msg {
+  color: red;
+  font-size: 14px;
+}
+
+.status-open-msg {
+  color: rgb(19, 162, 119);
+  font-size: 14px;
+}
+@media screen and (min-width: 425px){
+  .show-all-events-container {
+    width: 50%;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {

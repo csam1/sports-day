@@ -61,7 +61,7 @@ const Events = () => {
       <h2>List of all Sports events</h2>
       <p className="error-msg">
         {state.selectedEventList.length === SELECTED_EVENTS_LIMIT
-          ? `will not able to add more than ${SELECTED_EVENTS_LIMIT} events, Please Deselect any to continue events selection`
+          ? `Cannot add more than ${SELECTED_EVENTS_LIMIT} events, Please Deselect any to continue events selection`
           : ""}
       </p>
       <div className="events-container">{renderEventsContent()}</div>
