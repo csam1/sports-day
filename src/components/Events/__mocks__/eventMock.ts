@@ -73,13 +73,20 @@ export const eventsMocksOverlapping = [
   },
 ];
 export const selectedEventsMocks = [
-    // {
-    //   id: 1,
-    //   event_name: "Butterfly 100M",
-    //   event_category: "Swimming",
-    //   start_time: "2023-12-17 13:00:00",
-    //   end_time: "2023-12-17 14:00:00",
-    // },
+    {
+      id: 9,
+      event_name: "Butterfly 100M",
+      event_category: "Swimming",
+      start_time: "2023-12-17 10:00:00",
+      end_time: "2023-12-17 11:00:00",
+    },
+    {
+      id: 7,
+      event_name: "Freestyle 300M",
+      event_category: "Swimming",
+      start_time: "2022-12-17 11:30:00",
+      end_time: "2022-12-17 12:00:00",
+    },
     {
       id: 8,
       event_name: "Backstroke 200M",
