@@ -56,7 +56,7 @@ const AllEvents = () => {
               }}
               header={
                 isEventRegistrationClosed(event.start_time)
-                  ? <div className="error-text">Event registration closed</div>
+                  ? <div className="error-msg">Event registration closed</div>
                   : <div className="status-open-msg">Open</div>
               }
             />
