@@ -18,9 +18,14 @@ describe("Card Component", () => {
     render(
       <Card
         event={eventMock}
-        isEventSelected={eventMock.isEventSelected}
-        handleEventSelection={() => null}
-        isDisabled={false}
+        footer={{
+          btnText: 'Select',
+          isDisabled: false,
+          handleBtnSelection: () => null
+        }}
+        header={
+          <></>
+        }
       />
     );
     expect(screen.findByText(eventMock.event_name)).toBeTruthy();

@@ -8,7 +8,7 @@ import { eventReducer, GlobalContext } from './reducer/eventsReducer';
 export default function App() {
   const [state, dispatchEvent] = useReducer(eventReducer, {
     eventList: [],
-    selectedEventCount: 0
+    selectedEventList: []
   });
   return (
     <GlobalContext.Provider value={{state, dispatchEvent}}>

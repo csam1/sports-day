@@ -5,20 +5,13 @@
 
 .events-container {
   display: flex;
+  flex-direction: column-reverse;
   width: 100%;
   column-gap: 10px;
 }
-.toast {
-  border-radius: 12px;
-  background-color: #c53030;
-  width: 50%;
-  text-align: center;
-  padding: 10px 12px;
-  position: absolute;
-  bottom: 5%;
-  right: 25%;
-}
-.toast-error-msg {
-  font-size: 18px;
-  color: white;
+@media screen and (min-width: 425px){
+  .events-container {
+    display: flex;
+    flex-direction: row;
+  }
 }

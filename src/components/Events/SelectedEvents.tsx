@@ -1,9 +1,10 @@
-import React, { useCallback, useContext } from 'react';
+import React, { useCallback, useContext } from "react";
 
-import { GlobalContent, GlobalContext } from '../../reducer/eventsReducer';
-import { EventActionTypes } from '../../types/Action';
-import { EventProperties } from '../../types/event';
-import Card from '../Card';
+import { GlobalContent, GlobalContext } from "../../reducer/eventsReducer";
+import { EventActionTypes } from "../../types/Action";
+import { EventProperties } from "../../types/event";
+import Card from "../Card";
+import { isEventRegistrationClosed } from "../../helpers";
 
 const SelectedEvents = () => {
   const { state, dispatchEvent } = useContext<GlobalContent>(GlobalContext);
@@ -17,22 +18,26 @@ const SelectedEvents = () => {
   return (
     <div className="show-all-events-container">
       <h2>Selected Events</h2>
-      <p>{state.selectedEventCount === 0? 'No events are selected':''}</p>
+      <p>{state.selectedEventList.length === 0 ? "No events are selected" : ""}</p>
       <div className="card-container">
-        {state.eventList?.map((event: EventProperties) => {
-          if (event.isEventSelected) {
-            return (
-              <Card
-                key={event.id}
-                event={event}
-                isEventSelected={event.isEventSelected}
-                handleEventSelection={handleEventSelection}
-              />
-            );
-          }
-          return <></>;
+        {state.selectedEventList?.map((event: EventProperties) => {
+          return (
+            <Card
+              key={event.id}
+              event={event}
+              footer={{
+                handleBtnSelection: handleEventSelection,
+                isDisabled:  false,
+                btnText: "Deselect"
+              }}
+              header={
+                isEventRegistrationClosed(event.start_time)
+                  ? <div className="error-msg">Event registration closed</div>
+                  : <div className="status-open-msg">Open</div>
+              }
+            />
+          );
         })}
-
       </div>
     </div>
   );
