@@ -41,7 +41,7 @@ export const eventReducer = (state: StateProps, action: ActionTypes): StateProps
       }
       return {
         eventList: eventList || [],
-        selectedEventList: selectedEvents[USER_NAME].events,
+        selectedEventList: selectedEvents?.[USER_NAME]?.events || [],
       };
     }
     case EventActionTypes.DESELECT_EVENT: {
