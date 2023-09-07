@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/sports-day/static/css/main.f373370b.css",
-    "main.js": "/sports-day/static/js/main.f525aa7d.js",
+    "main.js": "/sports-day/static/js/main.d10f02c3.js",
     "index.html": "/sports-day/index.html",
     "main.f373370b.css.map": "/sports-day/static/css/main.f373370b.css.map",
-    "main.f525aa7d.js.map": "/sports-day/static/js/main.f525aa7d.js.map"
+    "main.d10f02c3.js.map": "/sports-day/static/js/main.d10f02c3.js.map"
   },
   "entrypoints": [
     "static/css/main.f373370b.css",
-    "static/js/main.f525aa7d.js"
+    "static/js/main.d10f02c3.js"
   ]
 }
