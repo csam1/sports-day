@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sports-day/static/css/main.f373370b.css",
+    "main.js": "/sports-day/static/js/main.8c32f31c.js",
+    "index.html": "/sports-day/index.html",
+    "main.f373370b.css.map": "/sports-day/static/css/main.f373370b.css.map",
+    "main.8c32f31c.js.map": "/sports-day/static/js/main.8c32f31c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f373370b.css",
+    "static/js/main.8c32f31c.js"
+  ]
+}
